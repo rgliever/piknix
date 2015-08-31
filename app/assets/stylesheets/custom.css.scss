@@ -1,0 +1,52 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+/* MIXINS & VARIABLES */
+
+@mixin box_sizing {
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+/* TYPOGRAPHY */
+
+h1, h4 {
+	color: #444444;
+	text-align: center;
+}
+
+h1 {
+	font-size: 3em;
+	font-weight: lighter;
+	letter-spacing: 6px;
+}
+
+
+/* IMAGE BOARD */
+
+#posts-board {
+	margin-top: 50px;
+	width: 80%;
+}
+
+
+/* FORMS */
+
+#new-posts-form {
+	margin: 0 auto;
+	text-align: center;
+	width: 50%;
+}
+
+input, textarea, select, .uneditable-input {
+	border: 1px solid #bbb;
+	width: 100%;
+	margin-bottom: 15px;
+	@include box_sizing;
+}
+
+input {
+	height: auto !important;
+}
+
