@@ -1,10 +1,21 @@
-<div class="container-fluid">
-	<h1>pixnik</h1>
-	<h4>Post a picture below.</h4>
-</div>
+<% provide(:subtitle, "Post a photo below.") %>
 
-<div class="container-fluid" id="new-posts-form">
+<% if flash.any? %>
+	<%= javascript_tag "$(document).ready(function() { show_post_form(); });" %>
+<% end %>
+
+<div class="container-fluid" id="new-post">
+	<button id="new-post-button" class="btn btn-primary">
+		New Post
+	</button>
+	<div id="post-form">
 		<%= render 'form' %>
+	</div>
+	<% flash.each do |msg_type, msg| %>
+		<div class="alert alert-<%= msg_type %>">
+			<h4><%= msg %></h4>
+		</div>
+  <% end %>
 </div>
 
 <div class="container-fluid" id="posts-board">

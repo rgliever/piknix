@@ -8,12 +8,21 @@ class PostsController < ApplicationController
   	@post = Post.new
   end
 
+  def show_errors(post)
+  end
+
   def create
   	@post = Post.new(post_params)
   	if @post.save
-  		redirect_to :action => :index
+      flash.now[:success] = "Your image was posted!"
+  		redirect_to root_url
   	else
-  		flash.now[:danger] = 'Uh-oh. There was a problem with your post.'
+      flash[:error] = "There was a problem posting your image: 
+                    #{@post.errors.full_messages.to_sentence}"
+      respond_to do |format|
+        format.html { redirect_to root_url }
+        format.js { render :js => 'show_post_form();'}
+      end
   	end
   end
 

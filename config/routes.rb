@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
   root         'posts#index'
-  get 'new' => 'posts#new'
   resource :posts
 
   # The priority is based upon order of creation: first created -> highest priority.
