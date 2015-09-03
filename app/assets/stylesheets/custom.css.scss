@@ -9,6 +9,9 @@
 	box-sizing: border-box;
 }
 
+$light-teal: #01914f;
+$dark-teal: #015e33;
+
 /* TYPOGRAPHY */
 
 h1, h4 {
@@ -27,7 +30,7 @@ h1 {
 
 #posts-board {
 	margin-top: 50px;
-	width: 90%;
+	width: 100%;
 }
 
 #all-posts {
@@ -47,10 +50,52 @@ h1 {
 	}
 }
 
+/* BUTTONS */
+
+.btn {
+    padding: 14px 24px;
+    border: 0 none;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    &:focus, &:active:focus, &.active:focus {
+    	outline: 0 none;
+    }
+}
+
+.btn-primary {
+	background-color: $light-teal;
+	color: #fff;
+	border: none;
+	&:focus, &:hover {
+		background: $light-teal;
+		outline: none;
+	}
+	&:active {
+		outline: none;
+		box-shadow: none;
+		background: $dark-teal;
+	}
+}
+
+.btn-primary.toggle {
+    &:active {
+    	background: $dark-teal;
+    	box-shadow: 0 0 10px 0 $light-teal;
+    }
+}
+
+.btn-primary.submit {
+	&:active {
+  	background: $dark-teal;
+  }
+}
+
 /* FORMS */
 
 #new-post-button {
 	width: 150px;
+	margin-bottom: 20px;
 }
 
 #new-post {

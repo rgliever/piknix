@@ -19,10 +19,7 @@ class PostsController < ApplicationController
   	else
       flash[:error] = "There was a problem posting your image: 
                     #{@post.errors.full_messages.to_sentence}"
-      respond_to do |format|
-        format.html { redirect_to root_url }
-        format.js { render :js => 'show_post_form();'}
-      end
+      redirect_to root_url
   	end
   end
 
