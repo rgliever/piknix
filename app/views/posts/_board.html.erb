@@ -2,7 +2,7 @@
 	<h2>No images to display ...</h2>
 
 <% else %>
-	<div id="all-posts" class="grid" >
+	<div id="all-posts" class="masonry centered" >
 		<% @posts.each do |post| %>
 			<div class="box">
 				<%= image_tag(post.url, width: "300px", alt: post.description) %>

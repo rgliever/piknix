@@ -1,4 +1,5 @@
 class Post < ActiveRecord::Base
-	validates :url, presence: true
+	VALID_URL_REGEX = /\A[\w+\-.:\/]+\.[\w+\-.]+[\/\w+-.]*\/[\w+\-.]+.(jpg|jpeg|png|gif)\z/i
+	validates :url, presence: true, format: { with: VALID_URL_REGEX }
 	validates :description, length: { maximum: 150 }
 end
