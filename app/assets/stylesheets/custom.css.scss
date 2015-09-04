@@ -12,6 +12,19 @@
 $light-teal: #01914f;
 $dark-teal: #015e33;
 
+/* UNIVERSAL */
+
+body {
+	margin: 0;
+	padding: 0;
+	text-align: center;
+}
+
+.container, .container-fluid {
+	padding: 0;
+	margin: 0 auto;
+}
+
 /* TYPOGRAPHY */
 
 h1, h4 {
@@ -30,7 +43,7 @@ h1 {
 
 #posts-board {
 	margin-top: 50px;
-	width: 100%;
+	width: 90%;
 }
 
 #all-posts {
@@ -38,7 +51,6 @@ h1 {
 }
 
 .box {
-	max-width: 400px;
 	img {
 		width: 100%;
 	}
@@ -48,6 +60,14 @@ h1 {
 		font-size: 1.4em;
 	}
 }
+
+.col-1, .col-2, .col-3 {
+	width: 350px;
+	img {
+	 max-width: 350px;
+	}
+}
+
 
 /* BUTTONS */
 

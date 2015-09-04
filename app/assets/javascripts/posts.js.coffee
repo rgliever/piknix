@@ -11,7 +11,7 @@ $ ->
 		$('#all-posts').masonry
 			itemSelector: '.box'
 			isFitWidth: true
-			columnWidth: 10
+			columnWidth: 1
 			isAnimated: true
 
 	$('#new-post-button').click ->
