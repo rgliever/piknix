@@ -3,8 +3,8 @@
 piknix is a simple image sharing web page made with Rails 4, Ruby 2 and MySQL.
 The name is contrived of a poor play on words with the word 'picnic'.
 
-
-
+  MySQL -- modeling Posts and later Hashtags and Users.
+  Masonry (masonry-rails gem) -- used to display the image board.
 
 
 
