@@ -8,9 +8,6 @@ class PostsController < ApplicationController
   	@post = Post.new
   end
 
-  def show_errors(post)
-  end
-
   def create
   	@post = Post.new(post_params)
   	if @post.save

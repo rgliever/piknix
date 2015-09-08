@@ -123,10 +123,16 @@ h1 {
 	width: 45%;
 }
 
+#signup-form {
+	width: 45%;
+	margin-top: 20px;
+}
+
 input, textarea, select, .uneditable-input {
 	border: 1px solid #bbb;
 	width: 100%;
 	margin-bottom: 15px;
+	text-align: center;
 	@include box_sizing;
 }
 
@@ -134,7 +140,7 @@ input {
 	height: auto !important;
 }
 
-/* FLASH MESSAGES */
+/* FLASH MESSAGES & ERRORS */
 
 .alert {
 	margin: 0 auto;
@@ -143,6 +149,15 @@ input {
 	position: absolute;
 	left: 0;
 	right: 0;
+	h4 {
+		text-align: center;
+		color: #aa0000;
+		font-weight: bold;
+	}
+}
+
+#error_explanation {
+	margin: 0 auto;
 	h4 {
 		text-align: center;
 		color: #aa0000;
