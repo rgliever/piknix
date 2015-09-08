@@ -25,6 +25,33 @@ body {
 	margin: 0 auto;
 }
 
+/* HEADER */
+
+#logo {
+	float: left;
+	top: 0;
+	letter-spacing: 6px;
+	font-size: 2em;
+	margin-top: 5px;
+	color: #fff;
+	&:hover {
+		color: $light-teal;
+		text-decoration: none;
+	}
+}
+
+#navbar-container {
+	margin: 0px 15px 0px 15px;
+}
+
+.navbar {
+	margin: 0 auto;
+}
+
+#subtitle {
+	margin-top: 60px;
+}
+
 /* TYPOGRAPHY */
 
 h1, h4 {

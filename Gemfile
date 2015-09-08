@@ -4,6 +4,7 @@ source 'https://rubygems.org'
 gem 'bootstrap-sass'
 gem 'masonry-rails'
 gem 'bcrypt'
+gem 'jquery-turbolinks'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.3'
