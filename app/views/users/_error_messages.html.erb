@@ -1,5 +1,5 @@
 <% if @user.errors.any? %>
-	<div id="error_explanation">
+	<div id="error_explanation" class="alert">
 	  <% @user.errors.full_messages.each do |msg| %>
 	    <h4><%= msg %></h4>
 	  <% end %>

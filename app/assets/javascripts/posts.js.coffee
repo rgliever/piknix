@@ -25,7 +25,7 @@ $ ->
 			$('#new-post-button').css('box-shadow', '0 0 10px 0 #01914f')
 			show_form = true
 
-	$('.alert').fadeOut(5000)
+	$('.alert').fadeOut(10000)
 
 @show_post_form = () ->
 	$('#post-form').show()
