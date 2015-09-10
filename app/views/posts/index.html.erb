@@ -8,14 +8,9 @@
 	<button id="new-post-button" class="btn btn-primary toggle">
 		New Post
 	</button>
-	<div id="post-form">
+	<div id="post-form" class="form">
 		<%= render 'post_form' %>
 	</div>
-	<% flash.each do |msg_type, msg| %>
-		<div class="alert alert-<%= msg_type %>">
-			<h4><%= msg %></h4>
-		</div>
-  <% end %>
 </div>
 
 <div class="container-fluid" id="posts-board">

@@ -11,7 +11,7 @@ class PostsController < ApplicationController
   def create
   	@post = Post.new(post_params)
   	if @post.save
-      flash.now[:success] = "Your image was posted!"
+      flash[:success] = "Your image was posted!"
   		redirect_to root_url
   	else
       flash[:error] = "There was a problem posting your image: 

@@ -40,13 +40,14 @@ body {
 }
 
 .navbar {
+	position: absolute;
+	padding-left: 15%;
+	padding-right: 15%;
 	margin: 0 auto;
-	padding-left: 10%;
-	padding-right: 10%;
 }
 
 #subtitle {
-	margin-top: 60px;
+	margin-top: 80px;
 }
 
 /* TYPOGRAPHY */
@@ -136,20 +137,20 @@ h1 {
 
 /* FORMS */
 
+.form {
+	width: 45%;
+	margin-top: 20px;
+	margin: 0 auto;
+	text-align: center;
+}
+
+#signup-link {
+	margin-top: 20px;
+}
+
 #new-post-button {
 	width: 150px;
 	margin-bottom: 20px;
-}
-
-#new-post {
-	margin: 0 auto;
-	text-align: center;
-	width: 45%;
-}
-
-#signup-form {
-	width: 45%;
-	margin-top: 20px;
 }
 
 input, textarea, select, .uneditable-input {
@@ -164,15 +165,32 @@ input {
 	height: auto !important;
 }
 
+/* REMEMBER ME */
+
+.checkbox {
+	margin-top: -10px;
+	margin-bottom: 20px;
+	span {
+		margin-left: 20px;
+		font-weight: normal;
+	}
+}
+
+#session_remember_me {
+	width: auto;
+	margin-left: 0;
+}
+
+
 /* FLASH MESSAGES & ERRORS */
 
 .alert {
+	position: absolute;
 	margin: 0 auto;
 	padding: 0;
-	margin-top: 20px;
-	position: absolute;
 	left: 0;
 	right: 0;
+	margin-top: -15px;
 	h4 {
 		text-align: center;
 		color: #aa0000;

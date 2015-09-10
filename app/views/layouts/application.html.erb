@@ -10,6 +10,12 @@
 <body>
 	<%= render 'layouts/header' %>
 
+	<% flash.each do |msg_type, msg| %>
+		<div class="alert alert-<%= msg_type %>">
+			<h4><%= msg %></h4>
+		</div>
+  <% end %>
+
 	<div id="subtitle" class="container-fluid">
 		<h4><%= yield(:subtitle) %></h4>
 	</div>
