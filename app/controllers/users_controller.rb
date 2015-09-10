@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
 	def show
 		@user = User.find(params[:id])
+    @posts = @user.posts.all.order("date(created_at)").reverse
 	end
 
   def new

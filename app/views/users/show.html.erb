@@ -1,1 +1,3 @@
-<% provide(:subtitle, @user.name + "'s board") %>
+<% provide(:subtitle, User.find(params[:id]).name + "'s board") %>
+
+<%= render 'shared/board' %>

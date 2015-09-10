@@ -1,18 +1,27 @@
-<% provide(:subtitle, "Post a photo below.") %>
-
 <% if flash.any? %>
 	<%= javascript_tag "$(document).ready(function() { show_post_form(); });" %>
 <% end %>
 
 <div class="container-fluid" id="new-post">
-	<button id="new-post-button" class="btn btn-primary toggle">
-		New Post
-	</button>
-	<div id="post-form" class="form">
-		<%= render 'post_form' %>
-	</div>
+	<% if logged_in? %>
+
+		<% provide(:subtitle, "Post a photo below.") %>
+		<button id="new-post-button" class="btn btn-primary toggle">
+			New Post
+		</button>
+		<div id="post-form" class="form">
+			<%= render 'post_form' %>
+		</div>
+
+	<% else %>
+
+		<% provide(:subtitle, "Log in or Sign up to post a photo.") %>
+		<%= link_to "Log in", login_path, 
+			id: "log-in-button", class: "btn btn-primary submit" %>
+
+	<% end %>
 </div>
 
 <div class="container-fluid" id="posts-board">
-	<%= render 'board' %>
+	<%= render 'shared/board' %>
 </div>

@@ -1,0 +1,22 @@
+<% if @posts.nil? || @posts.empty?%>
+	<h2>No images to display ...</h2>
+
+<% else %>
+	<div id="all-posts" class="masonry centered" >
+		<% @posts.in_groups_of(3).each do |post_set| %>
+
+			<% post_set.each_with_index do |post, index| %>
+				
+				<% if !post.nil? %>
+					<div class="col-<%= index+1 %> box">
+						<%= image_tag(post.url, alt: post.description) %>
+						<p> <%= post.description %> </p>
+					</div>
+				<% end %>
+			
+			<% end %>
+
+		<% end %>
+	</div>
+
+<% end %>
