@@ -1,3 +1,5 @@
+<!-- Used for both sign up (new) and edit; With form_for(@user), Rails uses
+     POST if @user.new_record? is true and PATCH if it's false. -->
 <%= form_for(@user) do |f| %>
   <%= f.label :name, "Username" %>
   <%= f.text_field :name, class: 'form-control' %>
@@ -8,5 +10,5 @@
   <%= f.label :password_confirmation, "Confirmation" %>
   <%= f.password_field :password_confirmation, class: 'form-control' %>
 
-  <%= f.submit "sign up", class: "btn btn-small btn-primary submit" %>
+  <%= f.submit yield(:button_text), class: "btn btn-small btn-primary submit" %>
 <% end %>
