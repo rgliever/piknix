@@ -6,7 +6,7 @@ gem 'masonry-rails'
 gem 'bcrypt'
 gem 'jquery-turbolinks'
 gem 'paperclip'
-gem 'aws-sdk'
+gem 'aws-sdk', '< 2.0'
 gem 'rmagick'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
