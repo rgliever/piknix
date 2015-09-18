@@ -10,9 +10,9 @@
 				<% if !post.nil? %>
 					<div class="col-<%= index+1 %> box">
 						<% if !post.url.blank? %>
-							<%= image_tag(post.url, alt: post.description) %>
+							<%= link_to image_tag(post.url, alt: post.description) %>
 						<% else %>
-							<%= image_tag(post.image.url, alt: post.description) %>
+							<%= link_to image_tag(post.image.url, alt: post.description) %>
 						<% end %>
 						<p> <%= post.description %> </p>
 					</div>
