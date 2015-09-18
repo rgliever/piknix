@@ -18,6 +18,7 @@ body {
 	margin: 0;
 	padding: 0;
 	text-align: center;
+	min-width: 400px;
 }
 
 .container, .container-fluid {
@@ -138,10 +139,11 @@ h1 {
 /* FORMS */
 
 .form {
-	width: 45%;
+	width: 50%;
 	margin-top: 20px;
 	margin: 0 auto;
 	text-align: center;
+	min-width: 400px;
 }
 
 #signup-link {
@@ -151,6 +153,18 @@ h1 {
 #new-post-button, #log-in-button {
 	width: 150px;
 	margin-bottom: 20px;
+}
+
+#image-url {
+	float: left;
+}
+
+
+#image-upload {
+	float: right;
+}
+
+#image-description {
 }
 
 input, textarea, select, .uneditable-input {
@@ -167,6 +181,15 @@ input {
 
 #delete-user {
 	margin-top: 20px;
+}
+
+.or-separator {
+	h5 {	
+		font-weight: bolder;
+		font-size: 1.1em;
+	}
+	padding: 0;
+	margin-bottom: 20px;
 }
 
 /* REMEMBER ME */
