@@ -6,6 +6,7 @@ gem 'masonry-rails'
 gem 'bcrypt'
 gem 'jquery-turbolinks'
 gem 'paperclip'
+gem 'rmagick'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.3'
