@@ -1,5 +1,7 @@
 == piknix README
 
+https://piknix.herokuapp.com
+
 piknix is a simple image sharing web page made with Rails 4, Ruby 2 and MySQL.
 The name is contrived of a poor play on words with the word 'picnic'.
 
