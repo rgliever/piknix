@@ -1,13 +1,33 @@
 == piknix README
 
-https://piknix.herokuapp.com
+=== https://piknix.herokuapp.com
+
+---
 
 piknix is a simple image sharing web page made with Rails 4, Ruby 2 and MySQL.
 The name is contrived of a poor play on words with the word 'picnic'.
 
-  MySQL -- modeling Posts and later Hashtags and Users.
-  Masonry (masonry-rails gem) -- used to display the image board.
-  Paperclip -- used to upload images to the database.
+---
+
+====Tools:
+
+* MySQL[https://rubygems.org/gems/mysql2] -- modeling Posts and Users (development).
+* Masonry[https://rubygems.org/gems/masonry-rails] -- used to display the image board.
+* Paperclip[https://rubygems.org/gems/paperclip] -- used to upload images to the database.
+* BCrypt[https://rubygems.org/gems/bcrypt-ruby/versions/3.1.5] -- used to securely store hashed user passwords.
+* {AWS S3}[https://rubygems.org/gems/aws-sdk] -- uploading images (with Paperclip) to an S3 bucket in production (Heroku).
+* Bootstrap[https://rubygems.org/gems/bootstrap-sass] -- setting up the layouts.
+  
+---
+
+====Features:
+* Sign up, Log in, Log out -- User model with password digest using BCrypt and authentication including a "remember me" checkbox which stores a remember digest in the browser cookies.
+* Edit User account -- Change username/password or delete account altogether. Authorizes users to make changes only to their accounts.
+* Posts -- After users log in, they can submit a post which contains an image and description. Their image will show up on their user profile board as well as the public board.
+  * Submitting posts -- Users can submit images in one of two ways: either providing a valid image URL, or uploading an image directly from their device (which utilizes Paperclip, and on Heroku, uploads to an AWS S3 bucket). Both options are checked with regexes.
+* More coming soon!
+  
+  
 
 
 
