@@ -2,8 +2,6 @@
 
 === https://piknix.herokuapp.com
 
----
-
 piknix is a simple image sharing web page made with Rails 4, Ruby 2 and MySQL.
 The name is contrived of a poor play on words with the word 'picnic'.
 
@@ -26,12 +24,5 @@ The name is contrived of a poor play on words with the word 'picnic'.
 * Posts -- After users log in, they can submit a post which contains an image and description. Their image will show up on their user profile board as well as the public board.
   * Submitting posts -- Users can submit images in one of two ways: either providing a valid image URL, or uploading an image directly from their device (which utilizes Paperclip, and on Heroku, uploads to an AWS S3 bucket). Both options are checked with regexes.
 * More coming soon!
-  
-  
 
-
-
-
-
-
-
+---
