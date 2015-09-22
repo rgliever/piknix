@@ -243,6 +243,8 @@ input {
 .fancybox-display {
 	img {
 		max-width: 85vh;
-		max-height: 85vh
+		max-height: 85vh;
+		width: auto;
+		height: auto;
 	}
 }
