@@ -8,6 +8,7 @@ gem 'jquery-turbolinks'
 gem 'paperclip'
 gem 'aws-sdk', '< 2.0'
 gem 'rmagick'
+gem 'fancybox2-rails'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.3'

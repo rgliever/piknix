@@ -6,12 +6,16 @@
 show_form = false
 $ ->
 	$('#post-form').hide()
+	$('#floating-div').hide()
 
 	$('#all-posts').imagesLoaded ->
 		$('#all-posts').masonry
 			itemSelector: '.box'
 			isFitWidth: true
 			isAnimated: true
+		$('a.fancybox').fancybox
+			padding: 4
+			closeBtn: false
 
 	$('#new-post-button').click ->
 		if (show_form)
@@ -27,8 +31,11 @@ $ ->
 
 	$('.alert').fadeOut(10000)
 
+
 @show_post_form = () ->
 	$('#post-form').show()
 	$('#new-post-button').css('background-color', '#015e33')
 	$('#new-post-button').css('box-shadow', '0 0 10px 0 #01914f')
 	show_form = true
+
+@show_floating_div = (image_path) ->

@@ -8,13 +8,20 @@
 			<% post_set.each_with_index do |post, index| %>
 				
 				<% if !post.nil? %>
+					<% @img_url = post.url.blank? ? post.image.url : post.url %>
+					<% @user = User.find(post.user_id) %>
+
 					<div class="col-<%= index+1 %> box">
-						<% if !post.url.blank? %>
-							<%= link_to image_tag(post.url, alt: post.description) %>
-						<% else %>
-							<%= link_to image_tag(post.image.url, alt: post.description) %>
-						<% end %>
-						<p> <%= post.description %> </p>
+						<%= link_to image_tag(@img_url, alt: post.description), 
+						    "#fancybox-display-#{post.id}", class: "fancybox" %>
+					</div>
+
+					<div style="display: none;">
+						<div class="fancybox-display" id="fancybox-display-<%= post.id %>">
+							<%= link_to image_tag(@img_url, alt: @img_url, class: "fancybox-image"),
+							 	  @img_url, target: "_blank" %>
+							<h5>Posted by <%= link_to @user.name, @user %></h5>
+						</div>
 					</div>
 				<% end %>
 			

@@ -22,3 +22,4 @@
 //= require masonry/modernizr-transitions
 //= require isotope/jquery.isotope
 //= require turbolinks
+//= require fancybox
