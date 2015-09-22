@@ -11,6 +11,7 @@ The name is contrived of a poor play on words with the word 'picnic'.
 
 * MySQL[https://rubygems.org/gems/mysql2] -- modeling Posts and Users (development).
 * Masonry[https://rubygems.org/gems/masonry-rails] -- used to display the image board.
+* Fancybox[https://rubygems.org/gems/fancybox2-rails/versions/0.2.8] -- used to display pop-up of larger image and additional info on image click.
 * Paperclip[https://rubygems.org/gems/paperclip] -- used to upload images to the database.
 * BCrypt[https://rubygems.org/gems/bcrypt-ruby/versions/3.1.5] -- used to securely store hashed user passwords.
 * {AWS S3}[https://rubygems.org/gems/aws-sdk] -- uploading images (with Paperclip) to an S3 bucket in production (Heroku).
