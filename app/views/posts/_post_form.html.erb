@@ -1,27 +1,32 @@
 <%= form_for @post, html: { multipart: true } do |f| %>
-	<%= render 'error_messages' %>
 
 	<div class="row">
-		<div class="field col-md-5 col-sm-12 col-xs-12" id="image-url">
+		<div class="col-xs-12">
+			<h3>Create a new post!</h3>
+		</div>
+
+		<div class="field col-xs-12" id="image-url">
 			<%= f.label :url, "Image URL" %>
 			<%= f.text_field :url, class: 'form-control' %>
 		</div>
-		<div class="or-separator col-md-2 col-sm-12 col-xs-12">
+
+		<div class="or-separator col-xs-12">
 				<h5>- OR -</h5>
 		</div>
-		<div class="field col-md-5 col-sm-12 col-xs-12" id="image-upload">
+
+		<div class="field col-xs-12" id="image-upload">
 			<%= f.label :image, "Upload image" %>
 			<%= f.file_field :image, class: 'form-control' %>
 		</div>
-	</div>
 
-	<div class="field" id="image-description">
-		<%= f.label :description %>
-		<%= f.text_area :description, class: 'form-control' %>
-	</div>
+		<div class="field col-xs-12" id="image-description">
+			<%= f.label :description %>
+			<%= f.text_area :description, class: 'form-control' %>
+		</div>
 
-	<div class="actions">
-		<%= f.submit "submit", class: "btn btn-small btn-primary submit" %>
+		<div class="actions col-xs-12">
+			<%= f.submit "submit", class: "btn btn-small btn-primary submit" %>
+		</div>
 	</div>
 
 <% end %>

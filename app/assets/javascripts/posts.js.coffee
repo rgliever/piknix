@@ -17,6 +17,8 @@ $ ->
 			padding: 4
 			closeBtn: false
 			centerOnScroll: true
+		$('a#post-form').fancybox
+			width: 400
 
 	$('#new-post-button').click ->
 		if (show_form)

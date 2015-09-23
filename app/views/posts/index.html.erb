@@ -6,18 +6,12 @@
 	<% if logged_in? %>
 
 		<% provide(:subtitle, "Post a photo below.") %>
-		<button id="new-post-button" class="btn btn-primary toggle">
-			New Post
-		</button>
-		<div id="post-form" class="form">
-			<%= render 'post_form' %>
-		</div>
 
 	<% else %>
 
-		<% provide(:subtitle, "Log in or Sign up to post a photo.") %>
-		<%= link_to "Log in", login_path, 
-			id: "log-in-button", class: "btn btn-primary submit" %>
+		<% provide(:subtitle, "Sign up to start posting.") %>
+		<%= link_to "Sign up", signup_path, 
+			id: "sign-up-button", class: "btn btn-primary submit" %>
 
 	<% end %>
 </div>

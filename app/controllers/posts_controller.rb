@@ -1,7 +1,6 @@
 class PostsController < ApplicationController
   def index
   	@posts = Post.all.order("date(created_at)").reverse
-  	@post = Post.new
   end
 
   def new
@@ -13,12 +12,11 @@ class PostsController < ApplicationController
     @post.user = current_user
   	if @post.save
       flash[:success] = "Your image was posted!"
-  		redirect_to root_url
   	else
       flash[:error] = "There was a problem posting your image: 
                     #{@post.errors.full_messages.to_sentence}"
-      redirect_to root_url
   	end
+    redirect_to :back
   end
 
   private
