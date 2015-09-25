@@ -268,11 +268,33 @@ input {
 
 /* FANCY BOX */
 
+/*
 .fancybox-display {
-	img {
+	display: inline-block;
+	a img {
+		display: inline-block;
+		position: relative;
 		max-width: 85vh;
 		max-height: 85vh;
 		width: auto;
 		height: auto;
+		margin-right: 0 !important;
+	}
+}
+*/
+
+.fancybox-wrap {
+}
+
+.fancybox-display {
+	h5 {
+		z-index: 9000;
+		position: absolute;
+		text-align: center;
+		width: 100%;
+		bottom: 0;
+		padding: 10px;
+		background: rgba(0,0,0,0.5);
+		color: #ddd;
 	}
 }
