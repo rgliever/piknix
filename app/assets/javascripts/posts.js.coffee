@@ -10,12 +10,16 @@ $ ->
 			isAnimated: true
 		$('a.fancybox').fancybox
 			padding: 0
+			helpers : { 
+    		title : { type : 'over'}
+   		}
 			closeBtn: false
 			centerOnScroll: true
 			autoSize: true
-			aspectRatio: true
-			autoScale: true
+			fitToView: true
+			aspectRatio: false
 			scrolling: no
+			
 
 		$('a#post-form').fancybox
 			width: 400
