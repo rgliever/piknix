@@ -1,5 +1,6 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import "font-awesome";
 
 /* MIXINS & VARIABLES */
 
@@ -283,9 +284,6 @@ input {
 }
 */
 
-.fancybox-wrap {
-}
-
 .fancybox-display {
 	h5 {
 		z-index: 9000;
@@ -302,4 +300,25 @@ input {
 .fancybox-title {
 	width: 100%;
 	text-align: center;
+}
+
+
+/* DELETE AND EDIT POSTS */
+
+.post-delete {
+	position: absolute;
+	display: none;
+	top: 10px;
+	right: 10px;
+	color: #fff;
+	&:visited, &:link {
+		color: #fff;
+	}
+	&:hover {
+		color: #aa0000;
+		font-size: 1.2em;
+	}
+	&:active {
+		
+	}
 }

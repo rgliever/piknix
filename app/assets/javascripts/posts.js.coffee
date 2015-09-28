@@ -19,14 +19,22 @@ $ ->
 			fitToView: true
 			aspectRatio: false
 			scrolling: no
+		$('.fancybox').mouseenter ->
+    	$(this).siblings().stop().slideToggle(300)
+    $('.fancybox').mouseleave ->
+    	$(this).siblings().stop().slideToggle(300)
+    $('.post-delete').mouseenter ->
+    	$(this).stop().show()
+    $('.post-delete').mouseleave ->
+    	$(this).stop().hide()
 			
 
 		$('a#post-form').fancybox
 			width: 400
 
-	$('.fancybox-display a').hover(
-  	-> $('.fancybox-display h5').fadeIn(150)
-  	-> $('.fancybox-display h5').fadeOut(150)
+	$('.fancybox-inner').hover(
+  	-> ('.fancybox-title').stop().fadeIn(150)
+  	-> ('.fancybox-title').stop().fadeOut(150)
   )
 
 	$('.alert').fadeOut(10000)

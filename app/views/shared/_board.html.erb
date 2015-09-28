@@ -12,16 +12,20 @@
 					<% @user = User.find(post.user_id) %>
 
 					<div class="col-<%= index+1 %> box">
-						<%= link_to image_tag(@img_url, alt: post.description), 
-						    @img_url, class: "fancybox", title: "Posted by #{link_to @user.name, @user}" %>
-					</div>
 
-					<div style="display: none;">
-						<div class="fancybox-display" id="fancybox-display-<%= post.id %>">
-							<%= link_to image_tag(@img_url, alt: @img_url, class: "fancybox-image"),
-							 	  @img_url, target: "_blank" %>
-							<h5>Posted by <%= link_to @user.name, @user %></h5>
-						</div>
+						<%= link_to(@img_url, class: "fancybox", 
+							title: "Posted by #{link_to @user.name, @user}") do %>
+
+							<%= image_tag(@img_url, alt: post.description) %>
+
+							<% if @user == current_user %>
+								<%= link_to '<i class="fa fa-trash fa-2x"></i>'.html_safe, 
+									post, method: :delete, class: "post-delete",
+									data: { confirm: "Sure you want to delete this post?"} %>
+							<% end %>
+
+						<% end %>
+
 					</div>
 				<% end %>
 			
