@@ -40,7 +40,6 @@ class Post < ActiveRecord::Base
 
 		# Creates a regex string to use in where query to get multiple tag models
 		# that are LIKE the passed in strings
-		"or sk"
 		regex_string = ''
 		names.each_with_index do |name, index|
 			if index == 0
@@ -63,7 +62,8 @@ class Post < ActiveRecord::Base
 
 	def self.tag_counts
 		Tag.select("tags.*, count(taggings.tag_id) as count").
-			joins(:taggings).group("taggings.tag_id")
+			     joins(:taggings).group("taggings.tag_id")
+		#return tags.blank? ? [] : tags
 	end
 
 	def tag_list
