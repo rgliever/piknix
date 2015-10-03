@@ -1,4 +1,4 @@
-<% provide(:subtitle, User.find(params[:id]).name + "'s board") %>
+<% provide(:subtitle, User.find_by_name(params[:id]).name + "'s board") %>
 
 <div class="container-fluid" id="posts-board">
 	<%= render 'shared/board' %>

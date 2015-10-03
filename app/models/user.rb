@@ -34,4 +34,8 @@ class User < ActiveRecord::Base
 	def forget
 		update_attribute(:remember_digest, nil)
 	end
+
+	def to_param
+		name
+	end
 end

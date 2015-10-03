@@ -18,10 +18,10 @@
 			<%= f.label :image, "Upload image" %>
 			<%= f.file_field :image, class: 'form-control' %>
 		</div>
-
-		<div class="field col-xs-12" id="image-description">
-			<%= f.label :description %>
-			<%= f.text_area :description, class: 'form-control' %>
+		
+		<div class="field col-xs-12" id="image-tags">
+			<%= f.label :tag_list, "Tags (separated by commas)" %>
+			<%= f.text_field :tag_list, placeholder: "gimme at least one", class: 'form-control' %>
 		</div>
 
 		<div class="actions col-xs-12">

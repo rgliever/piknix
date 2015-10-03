@@ -10,8 +10,17 @@
 	box-sizing: border-box;
 }
 
+$lighter-teal: #02dd78;
 $light-teal: #01914f;
 $dark-teal: #015e33;
+
+$alert-red: #aa0000;
+$alert-blue: #0000aa;
+
+
+/* MEDIA (PHONES AND TABLETS) */
+
+$small-screen: 768px;
 
 /* UNIVERSAL */
 
@@ -27,34 +36,72 @@ body {
 	margin: 0 auto;
 }
 
+.content {
+	margin-top: 80px;
+}
+
 /* HEADER */
 
 #logo, #new {
 	letter-spacing: 6px;
 	font-size: 2em;
-	margin-top: 5px;
 	color: #fff;
-	float: left;
+	padding: 0;
+	padding-top: 15px;
 	&:hover {
-		color: $light-teal;
+		color: $lighter-teal;
 		text-decoration: none;
 	}
 }
 
 #new {
-	font-size: 2.5em;
+	@media(max-width: 768px) {
+		
+	}
 }
 
 .navbar {
 	position: absolute;
-	padding-left: 15%;
-	padding-right: 15%;
+	padding-left: 10%;
+	padding-right: 10%;
 	margin: 0 auto;
+	.navbar-right li {
+		
+	}
 }
 
-#subtitle {
-	margin-top: 80px;
+
+/* SEARCH */
+
+#search {
+	width: 100%;
+	border-radius: 0;
+	&:focus {
+		border-color: rgba(1,87, 47, 0.8) !important;
+    box-shadow: 0 1px 1px rgba(1, 87, 47, 0.075) inset, 0 0 8px rgba(1, 87, 47, 0.6) !important;
+    outline: 0 none !important;
+	}
 }
+
+#search-bar {
+	position: absolute;
+	margin-top: 9px;
+	margin-bottom: -9px;
+	margin-left: auto;
+	margin-right: auto;
+	left: 0;
+	right: 0;
+	@media(max-width: 768px) {
+		position: relative;
+		z-index: 200;
+	}
+}
+
+
+.navbar-form {
+	margin: 0;
+}
+
 
 /* TYPOGRAPHY */
 
@@ -162,13 +209,22 @@ h1 {
 	width: 50vh;
 	height: auto;
 	overflow-x: hidden;
+	h3 {
+		margin-top: 20px;
+		margin-bottom: 20px;
+	}
+}
+
+.field {
+	margin-top: 15px;
+	margin-bottom: 15px;
 }
 
 #signup-link {
 	margin-top: 20px;
 }
 
-#new-post-button, #sign-up-button {
+#sign-up-button {
 	width: 150px;
 	margin-bottom: 20px;
 }
@@ -205,9 +261,16 @@ input {
 	h5 {	
 		font-weight: bolder;
 		font-size: 1.1em;
+		margin: 0;
 	}
 	padding: 0;
-	margin-bottom: 20px;
+	margin-bottom: 15px;
+}
+
+#image-upload, #image-tags {
+	.form-control {
+		margin-bottom: 15px;
+	}
 }
 
 /* REMEMBER ME */
@@ -245,7 +308,7 @@ input {
 
 .alert.alert-error {
 	h4 {
-		color: #aa0000;
+		color: $alert-red;
 	}
 }
 
@@ -253,53 +316,49 @@ input {
 	background-color: transparent;
 	border: none;
 	h4 {
-		color: #0000aa;
-	}
-}
-
-#error_explanation {
-	margin: 0 auto;
-	h4 {
-		text-align: center;
-		color: #aa0000;
-		font-weight: bold;
+		color: $alert-blue;
 	}
 }
 
 
 /* FANCY BOX */
 
-/*
-.fancybox-display {
-	display: inline-block;
-	a img {
-		display: inline-block;
-		position: relative;
-		max-width: 85vh;
-		max-height: 85vh;
-		width: auto;
-		height: auto;
-		margin-right: 0 !important;
-	}
+#post-info {
+	display: none;
 }
-*/
 
 .fancybox-display {
-	h5 {
+	img {
+		width: 100%;
+		height: 100%;
+		margin: 0 auto;
+	}
+	h4, h5 {
 		z-index: 9000;
 		position: absolute;
-		text-align: center;
+		test-align: center;
 		width: 100%;
-		bottom: 0;
-		padding: 10px;
+		padding: 5px;
 		background: rgba(0,0,0,0.5);
 		color: #ddd;
+		a {
+			color: $lighter-teal;
+			&:visited, &:link {
+				color: $lighter-teal;
+			}
+			&:hover {
+				color: $dark-teal;
+			}
+		}
 	}
-}
-
-.fancybox-title {
-	width: 100%;
-	text-align: center;
+	h4 {
+		bottom: -10px;
+	}
+	h5 {
+		top: -10px;
+		text-transform: uppercase;
+		letter-spacing: 2px;
+	}
 }
 
 
@@ -315,10 +374,60 @@ input {
 		color: #fff;
 	}
 	&:hover {
-		color: #aa0000;
+		color: $alert-red;
 		font-size: 1.2em;
 	}
 	&:active {
 		
+	}
+}
+
+
+/* TAGS & TAGGING */
+
+#top-info {
+	width: 90%;
+}
+
+#tag_cloud {
+	width: 100%;
+	margin: 0 auto;
+	.btn {
+		text-align: center;
+		color: $light-teal;
+		background-color: white;
+		border-bottom: 2px solid white;
+		letter-spacing: 2px;
+		text-transform: uppercase;
+		font-size: 1em;
+		padding: 15px;
+		border-radius: 0;
+
+		/* css3 fading */
+		-o-transition:color .4s ease-in, border-bottom .2s ease-in;
+  	-ms-transition:color .4s ease-in, border-bottom .2s ease-in;
+  	-moz-transition:color .4s ease-in, border-bottom .2s ease-in;
+  	-webkit-transition:color .4s ease-in, border-bottom .2s ease-in;
+  	/* ...and now override with proper CSS property */
+  	transition:color .4s ease-in, border-bottom .2s ease-in;
+
+		&:hover, &:active {
+			color: $lighter-teal;
+			border-bottom: 2px solid $lighter-teal;
+		}
+		a {
+			color: $lighter-teal;
+			&:visited, &:link {
+				color: $lighter-teal;
+			}
+			&:hover, &:active {
+				color: $light-teal;
+				text-decoration: none;
+			}
+		}
+	}
+
+	@media(max-width: 768px) {
+		font-size: 0.8em;
 	}
 }

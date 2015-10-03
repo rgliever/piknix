@@ -1,36 +1,42 @@
 <% if @posts.nil? || @posts.empty?%>
+
 	<h2>No images to display ...</h2>
 
 <% else %>
+
 	<div id="all-posts" class="masonry centered" >
 		<% @posts.in_groups_of(3).each do |post_set| %>
-
 			<% post_set.each_with_index do |post, index| %>
-				
 				<% if !post.nil? %>
 					<% @img_url = post.url.blank? ? post.image.url : post.url %>
 					<% @user = User.find(post.user_id) %>
 
 					<div class="col-<%= index+1 %> box">
-
-						<%= link_to(@img_url, class: "fancybox", 
-							title: "Posted by #{link_to @user.name, @user}") do %>
-
-							<%= image_tag(@img_url, alt: post.description) %>
+						<%= link_to("#fancybox-#{post.id}", class: "fancybox") do %>
+							<%= image_tag(@img_url, alt: @img_url) %>
 
 							<% if @user == current_user %>
-								<%= link_to '<i class="fa fa-trash fa-2x"></i>'.html_safe, 
+								<%= link_to '<i class="fa fa-trash fa-2x"></i>'.html_safe,
 									post, method: :delete, class: "post-delete",
 									data: { confirm: "Sure you want to delete this post?"} %>
 							<% end %>
-
 						<% end %>
-
 					</div>
-				<% end %>
-			
-			<% end %>
 
+					<div style="display: none">
+						<div id="fancybox-<%= post.id %>" class="fancybox-display">
+							<%= link_to image_tag(@img_url, alt: @img_url), @img_url, target: "_blank" %>
+							<div id="post-info">
+								<h4>Posted by <%= link_to @user.name, @user %></h4>
+								<h5>
+									<%= raw post.tags.map(&:name).map { |t| link_to t, tag_path(t) }.join(', ') %>
+								</h5>
+							</div>
+						</div>
+					</div>
+
+				<% end %>
+			<% end %>
 		<% end %>
 	</div>
 

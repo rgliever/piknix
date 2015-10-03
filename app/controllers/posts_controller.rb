@@ -1,6 +1,12 @@
 class PostsController < ApplicationController
   def index
-  	@posts = Post.all.order("date(created_at)").reverse
+    if params[:tag]
+      @posts = Post.tagged_with(params[:tag])
+    elsif params[:search]
+      @posts = Post.search(params[:search])
+    else
+      @posts = Post.all.order("date(created_at)").reverse
+    end
   end
 
   def new
@@ -20,6 +26,10 @@ class PostsController < ApplicationController
   end
 
   def destroy
+    post = Post.find(params[:id])
+    post.taggings.each do |tagging|
+      Tagging.find(tagging.id).destroy
+    end
     Post.find(params[:id]).destroy
     flash[:success] = "Post deleted."
     redirect_to :back
@@ -28,6 +38,6 @@ class PostsController < ApplicationController
   private
 
   	def post_params
-  		params.require(:post).permit(:url, :image, :description)
+  		params.require(:post).permit(:url, :image, :description, :content, :name, :tag_list)
   	end
 end

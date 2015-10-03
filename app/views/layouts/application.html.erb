@@ -5,6 +5,7 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <meta name="viewport" content="width=device-width" />
 </head>
 
 <body>
@@ -16,11 +17,7 @@
 		</div>
   <% end %>
 
-	<div id="subtitle" class="container-fluid">
-		<h4><%= yield(:subtitle) %></h4>
-	</div>
-
-	<div class="container-fluid">
+	<div class="content container-fluid">
   	<%= yield %>
 	</div>
 

@@ -1,19 +1,16 @@
-<% if flash.any? %>
-	<%= javascript_tag "$(document).ready(function() { show_post_form(); });" %>
-<% end %>
-
-<div class="container-fluid" id="new-post">
-	<% if logged_in? %>
-
-		<% provide(:subtitle, "Post a photo below.") %>
-
-	<% else %>
-
-		<% provide(:subtitle, "Sign up to start posting.") %>
+<div class="container-fluid" id="top-info">
+	<% if !logged_in? %>
 		<%= link_to "Sign up", signup_path, 
 			id: "sign-up-button", class: "btn btn-primary submit" %>
-
 	<% end %>
+
+	<div id="tag_cloud" class="row">
+		<% tag_cloud Post.tag_counts do |tag| %>
+			<%= link_to tag.name, tag_path(tag.name), 
+					class: "col-xs-4 col-md-2 btn btn-primary",
+					id: 'tag_cloud_button' %>
+		<% end %>
+	</div>
 </div>
 
 <div class="container-fluid" id="posts-board">
