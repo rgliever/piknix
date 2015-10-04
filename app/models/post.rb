@@ -45,13 +45,14 @@ class Post < ActiveRecord::Base
 			if index == 0
 				regex_string += name
 			else
-				regex_string += ("|" + name)
+				regex_string += ('|' + name)
 			end
 		end
 
 		# Goes through the tag models and adds each post to the array of all posts,
 		# iff the post has not already been added to all_posts
-		Tag.where("name REGEXP ?", regex_string).each do |tag|
+		regex_type = Rails.env.development? ? "REGEXP" : "~*"
+		Tag.where("name " +regex_type+ " ?", regex_string).each do |tag|
 			tag.posts.each do |post|
 				all_posts << post unless all_posts.include?(post)
 			end
