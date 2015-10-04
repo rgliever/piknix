@@ -5,7 +5,13 @@
 	<% end %>
 
 	<div id="tag_cloud" class="row">
-		
+		<% unless Post.tag_counts.blank? %>
+			<% tag_cloud Post.tag_counts do |tag| %>
+				<%= link_to tag.name, tag_path(tag.name), 
+						class: "col-xs-4 col-md-2 btn btn-primary",
+						id: 'tag_cloud_button' %>
+			<% end %>
+		<% end %>
 	</div>
 </div>
 
