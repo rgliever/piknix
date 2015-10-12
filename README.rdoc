@@ -23,9 +23,11 @@ The name is contrived of a poor play on words with the word 'picnic'.
 ====Features:
 * Sign up, Log in, Log out -- User model with password digest using BCrypt and authentication including a "remember me" checkbox which stores a remember digest in the browser cookies.
 * Edit User account -- Change username/password or delete account altogether. Authorizes users to make changes only to their accounts.
-* Posts -- After users log in, they can submit a post which contains an image and a list of tags (at least one). Their image will show up on their user profile board as well as the public board.
+* Posts -- After users log in, they can submit a post which contains an image and a list of tags (at least one). Their image will show up on their user profile board (/users/username) as well as the public board.
   * Submitting posts -- Users can submit images in one of two ways: either providing a valid image URL, or uploading an image directly from their device (which utilizes Paperclip, and on Heroku, uploads to an AWS S3 bucket). Both options are checked with regexes.
-* Tags & Tagging -- Image posts are tagged and can be filtered by going to a specific tag link (/tags/tag) or performing a search query.
+* Tags, Tagging, and Search -- Image posts are tagged and can be filtered by going to a specific tag link (/tags/tag) or performing a search query.
+* Boards -- Image boards (public or user) are Masonry galleries which display thumbnails of image posts. Each thumbnail is a link to a Fancybox pop-up, which shows the larger image and displays tag links and a link to the user profile when hovering over the pop-up. The image in the pop-up itself is also a link to the image url, which opens in a new tab.
+* Edit and Delete posts -- Users can update the tags provided for their posts, or delete the post altogether. Links to both actions are provided when the user hovers over the thumbnail (in an image board) of an image they've posted.
 * More coming soon!
 
 ---
