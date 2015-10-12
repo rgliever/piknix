@@ -17,6 +17,7 @@ class UsersController < ApplicationController
       log_in @user
   		redirect_to @user
   	else
+      flash[:error] = "Uh-oh, #{@user.errors.full_messages.to_sentence}"
   		render 'new'
   	end
   end
@@ -31,6 +32,7 @@ class UsersController < ApplicationController
       flash[:success] = "Profile updated"
       redirect_to @user
     else
+      flash[:error] = "Uh-oh, #{@user.errors.full_messages.to_sentence}"
       render 'edit'
     end
   end

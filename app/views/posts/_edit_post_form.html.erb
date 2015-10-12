@@ -1,0 +1,18 @@
+<%= form_for @post, html: { multipart: true } do |f| %>
+
+	<div class="row">
+		<div class="col-xs-12">
+			<h3>Edit tags</h3>
+		</div>
+		
+		<div class="field col-xs-12" id="image-tags">
+			<%= f.label :tag_list, "Tags (separated by commas)" %>
+			<%= f.text_field :tag_list, placeholder: "gimme at least one", class: 'form-control' %>
+		</div>
+
+		<div class="actions col-xs-12">
+			<%= f.submit "save", class: "btn btn-small btn-primary submit" %>
+		</div>
+	</div>
+
+<% end %>

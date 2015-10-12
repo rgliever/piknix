@@ -211,7 +211,7 @@ h1 {
 	min-width: 400px;
 }
 
-#post-form {
+#post-form, .edit-post-form {
 	display: inline-block;
 	margin-bottom: 30px;
 	margin-right: 30px;
@@ -375,21 +375,33 @@ input {
 
 /* DELETE AND EDIT POSTS */
 
-.post-delete {
+.post-delete, #post-edit {
 	position: absolute;
 	display: none;
-	top: 10px;
-	right: 10px;
 	color: #fff;
 	&:visited, &:link {
 		color: #fff;
 	}
+	&:active {
+		
+	}
+}
+
+.post-delete {
+	top: 10px;
+	right: 10px;
 	&:hover {
 		color: $alert-red;
 		font-size: 1.2em;
 	}
-	&:active {
-		
+}
+
+#post-edit {
+	bottom: 10px;
+	right: 10px;
+	&:hover {
+		color: $alert-blue;
+		font-size: 1.2em;
 	}
 }
 

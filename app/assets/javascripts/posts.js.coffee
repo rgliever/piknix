@@ -16,13 +16,13 @@ $ ->
 			fitToView: true
 			aspectRatio: true
 			scrolling: no
-		$('.fancybox').mouseenter ->
+		$('.fancybox.in-gallery').mouseenter ->
     	$(this).siblings().stop().slideToggle(300)
-    $('.fancybox').mouseleave ->
+    $('.fancybox.in-gallery').mouseleave ->
     	$(this).siblings().stop().slideToggle(300)
-    $('.post-delete, #post-info').mouseenter ->
+    $('.post-delete, #post-edit, #post-info').mouseenter ->
     	$(this).stop().show()
-    $('.post-delete, #post-info').mouseleave ->
+    $('.post-delete, #post-edit, #post-info').mouseleave ->
     	$(this).stop().hide()
 			
 

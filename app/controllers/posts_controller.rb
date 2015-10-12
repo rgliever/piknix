@@ -25,6 +25,20 @@ class PostsController < ApplicationController
     redirect_to :back
   end
 
+  def edit
+    @post = Post.find(params[:id])
+  end
+
+  def update
+    @post = Post.find(params[:id])
+    if @post.update_attributes(post_params)
+      flash[:success] = "Tags updated"
+    else
+      flash[:error] = "Uh-oh, #{@post.errors.full_messages.to_sentence}"
+    end
+    redirect_to :back
+  end
+
   def destroy
     post = Post.find(params[:id])
     post.taggings.each do |tagging|
