@@ -2,6 +2,7 @@ class Post < ActiveRecord::Base
 	belongs_to :user
 	has_many :taggings
 	has_many :tags, through: :taggings
+	before_create :adjust_url
 
 	validates :tags, presence: true, length: { maximum: 50 }
 
@@ -26,6 +27,10 @@ class Post < ActiveRecord::Base
 		else
 			return true
 		end	
+	end
+
+	def adjust_url
+		self.url.gsub!(/http/, 'https')
 	end
 
 	# TAG FUNCTIONS
