@@ -16,7 +16,7 @@ The name is contrived of a poor play on words with the word 'picnic'.
 * BCrypt[https://rubygems.org/gems/bcrypt-ruby/versions/3.1.5] -- used to securely store hashed user passwords.
 * {AWS S3}[https://rubygems.org/gems/aws-sdk] -- uploading images (with Paperclip) to an S3 bucket in production (Heroku).
 * Bootstrap[https://rubygems.org/gems/bootstrap-sass] -- setting up the layouts.
-* Font Awesome[https://github.com/bokmann/font-awesome-rails] -- all the pretty icons.
+* {Font Awesome}[https://github.com/bokmann/font-awesome-rails] -- all the pretty icons.
   
 ---
 
