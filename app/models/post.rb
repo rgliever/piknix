@@ -3,7 +3,7 @@ class Post < ActiveRecord::Base
 	has_many :taggings
 	has_many :tags, through: :taggings
 
-	validates :tags, presence: true, length: { maximum: 150 }
+	validates :tags, presence: true, length: { maximum: 50 }
 
 	VALID_URL_REGEX = /\A[\w+\-.:\/]+\.[\w+\-.]+[\/\w+-.]*\/[\w+\-.]+.(jpg|jpeg|png|gif|gifv)\z/i
 	validates :url, format: { with: VALID_URL_REGEX }, allow_blank: true
@@ -73,7 +73,7 @@ class Post < ActiveRecord::Base
 
 	def tag_list=(names)
 		self.tags = names.split(",").map do |n|
-			Tag.where(name: n.strip).first_or_create!
+			Tag.where(name: n.strip.downcase).first_or_create!
 		end
 	end
 
