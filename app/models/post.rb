@@ -30,7 +30,11 @@ class Post < ActiveRecord::Base
 	end
 
 	def adjust_url
-		self.url.gsub!(/http:/, 'https:')
+		if !self.url.blank?
+			self.url.gsub!(/http:/, 'https:')
+		else
+			self.image.url.gsub!(/http:/, 'https:')
+		end
 	end
 
 	# TAG FUNCTIONS

@@ -17,7 +17,6 @@ $dark-teal: #015e33;
 $alert-red: #aa0000;
 $alert-blue: #0000aa;
 
-
 /* MEDIA (PHONES AND TABLETS) */
 
 $small-screen: 768px;
@@ -56,7 +55,7 @@ body {
 
 #new {
 	@media(max-width: 768px) {
-		
+
 	}
 }
 
@@ -66,7 +65,7 @@ body {
 	padding-right: 10%;
 	margin: 0 auto;
 	.navbar-right li {
-		
+
 	}
 }
 
@@ -269,7 +268,7 @@ input {
 }
 
 .or-separator {
-	h5 {	
+	h5 {
 		font-weight: bolder;
 		font-size: 1.1em;
 		margin: 0;
@@ -383,7 +382,7 @@ input {
 		color: #fff;
 	}
 	&:active {
-		
+
 	}
 }
 
@@ -452,5 +451,37 @@ input {
 
 	@media(max-width: 768px) {
 		font-size: 0.8em;
+	}
+}
+
+
+/* FOOTER */
+
+.footer {
+	margin-top: 50px;
+	hr {
+		margin: 0 auto;
+		text-align: center;
+		width: 95%;
+		background-color: $dark-teal;
+		opacity: 0.6;
+		border: 0;
+		height: 1px;
+	}
+	p {
+		margin-top: 10px;
+		margin-bottom: 10px;
+		color: $dark-teal;
+		letter-spacing: 1.5px;
+		font-size: 0.9em;
+		a {
+			&:visited, &:link {
+				color: $dark-teal;
+			}
+			&:hover, &:active {
+				color: $lighter-teal;
+				text-decoration: none;
+			}
+		}
 	}
 }
